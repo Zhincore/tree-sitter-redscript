@@ -1,50 +1,50 @@
 {
   "name": "tree-sitter-redscript",
-  "version": "0.0.1",
-  "main": "bindings/node/index.js",
-  "types": "bindings/node",
-  "author": "jekky",
+  "version": "0.1.0",
+  "description": "Redscript grammar for tree-sitter",
+  "repository": "https://github.com/tree-sitter/tree-sitter-redscript",
   "license": "MIT",
-  "scripts": {
-    "build": "tree-sitter generate --no-bindings",
-    "install": "node-gyp-build",
-    "postinstall": "node-gyp configure && node-gyp build",
-    "prebuildify": "prebuildify --napi --strip"
+  "author": {
+    "name": "Jekky"
   },
-  "tree-sitter": [
-    {
-      "scope": "source.reds",
-      "file-types": [
-        "reds"
-      ],
-      "locals": [
-        "queries/locals.scm"
-      ],
-      "tags": [
-        "queries/tags.scm"
-      ],
-      "highlights": [
-        "queries/highlights.scm"
-      ]
-    }
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "keywords": [
+    "incremental",
+    "parsing",
+    "tree-sitter",
+    "redscript"
+  ],
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "*.wasm"
   ],
   "dependencies": {
-    "node-addon-api": "^8.0.0",
-    "node-gyp-build": "^4.8.0",
-    "tree-sitter-cli": "^0.23",
-    "which": "2.0.2"
+    "node-addon-api": "^8.2.1",
+    "node-gyp-build": "^4.8.2"
+  },
+  "devDependencies": {
+    "prebuildify": "^6.0.1",
+    "tree-sitter-cli": "^0.25.3"
   },
   "peerDependencies": {
     "tree-sitter": "^0.21.1"
   },
   "peerDependenciesMeta": {
-    "tree_sitter": {
+    "tree-sitter": {
       "optional": true
     }
   },
-  "devDependencies": {
-    "node-gyp": "^10.0.1",
-    "prebuildify": "^6.0.0",
-    "prettier": "2.3.2"
+  "scripts": {
+    "install": "node-gyp-build",
+    "prestart": "tree-sitter build --wasm",
+    "start": "tree-sitter playground",
+    "test": "node --test bindings/node/*_test.js"
   }
 }

@@ -1,12 +1,47 @@
-node_modules
-*.swp
-/build
+# Rust artifacts
+target/
+
+# Node artifacts
+build/
+prebuilds/
+node_modules/
+
+# Swift artifacts
+.build/
+
+# Go artifacts
+_obj/
+
+# Python artifacts
+.venv/
+dist/
+*.egg-info
+*.whl
+
+# C artifacts
 *.a
-*.dylib
 *.so
-*.o
-*.obj
-*.lib
+*.so.*
+*.dylib
+*.dll
+*.pc
 *.exp
-bindings/c/*.h
-bindings/c/tree-sitter-*.pc
+*.lib
+
+# Zig artifacts
+.zig-cache/
+zig-cache/
+zig-out/
+
+# Example dirs
+/examples/*/
+
+# Grammar volatiles
+*.wasm
+*.obj
+*.o
+
+# Archives
+*.tar.gz
+*.tgz
+*.zip
