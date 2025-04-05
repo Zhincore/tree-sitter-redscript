@@ -16,11 +16,14 @@
     "description": "Redscript grammar for tree-sitter",
     "authors": [
       {
-        "name": "Jekky"
+        "name": "jekky"
+      },
+      {
+        "name": "Zhincore"
       }
     ],
     "links": {
-      "repository": "https://github.com/tree-sitter/tree-sitter-redscript"
+      "repository": "https://github.com/jac3km4/tree-sitter-redscript"
     }
   },
   "bindings": {
